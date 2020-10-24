@@ -1,15 +1,12 @@
 import React, { useReducer } from 'react';
 import Context from './context';
-import { IProvider, IState } from './interfaces';
+import { IProvider } from './interfaces';
 import reducer from './reducer';
+import { INITIAL_STATE } from './types';
 
 const Provider = (props: IProvider) => {
-    let initialState: IState = {
-        counter: 0,
-        secondCounter: 0
-    };
 
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
     
     return (
         <Context.Provider value={{

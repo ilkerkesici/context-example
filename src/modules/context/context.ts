@@ -1,10 +1,7 @@
 import { createContext } from "react";
-import { useDispatch } from "./abstraction";
+import { INITIAL_STATE } from './types';
 import { IContext } from './interfaces';
 
-const Context = createContext<IContext>({
-        counter: 0, 
-        secondCounter: 0
-    });
+const Context = createContext<IContext>(INITIAL_STATE);
 
 export default Context;
